@@ -8,7 +8,6 @@ Source0:	http://files.musepack.net/source/mppenc-%{version}.tar.bz2
 URL:		http://www.musepack.net/
 BuildRequires:	nasm
 BuildRequires:	cmake
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 This program handles encoding of the MPC format, which is an audio
