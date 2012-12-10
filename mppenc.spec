@@ -40,3 +40,38 @@ cmake -DCMAKE_INSTALL_PREFIX:=%{_prefix}
 %attr(755,root,root) %{_bindir}/*
 
 
+
+
+%changelog
+* Fri Dec 10 2010 Oden Eriksson <oeriksson@mandriva.com> 1.16-7mdv2011.0
++ Revision: 620406
+- the mass rebuild of 2010.0 packages
+
+* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 1.16-6mdv2010.0
++ Revision: 430104
+- rebuild
+
+* Tue Jul 29 2008 Thierry Vignaud <tv@mandriva.org> 1.16-5mdv2009.0
++ Revision: 252992
+- rebuild
+
+* Fri Dec 21 2007 Olivier Blin <oblin@mandriva.com> 1.16-3mdv2008.1
++ Revision: 136609
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+
+* Thu Jan 18 2007 Tomasz Pawel Gajc <tpg@mandriva.org> 1.16-3mdv2007.0
++ Revision: 110441
+- drop requires
+
+* Thu Jan 18 2007 Tomasz Pawel Gajc <tpg@mandriva.org> 1.16-2mdv2007.1
++ Revision: 110371
+- fix requires
+
+* Thu Jan 18 2007 Tomasz Pawel Gajc <tpg@mandriva.org> 1.16-1mdv2007.1
++ Revision: 110086
+- Import mppenc
+
