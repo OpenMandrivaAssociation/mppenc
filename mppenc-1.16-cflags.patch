@@ -1,0 +1,12 @@
+diff -urN mppenc-1.16/CMakeLists.txt mppenc-1.16-patched/CMakeLists.txt
+--- mppenc-1.16/CMakeLists.txt	2006-11-11 08:29:23.000000000 +1000
++++ mppenc-1.16-patched/CMakeLists.txt	2013-07-23 00:39:52.960739667 +1100
+@@ -2,8 +2,4 @@
+ project(mppenc C)
+ set(CMAKE_VERBOSE_MAKEFILE false)
+ 
+-if(NOT MSVC)
+-set(CMAKE_C_FLAGS "-O2 -ffast-math -fomit-frame-pointer -pipe")
+-endif(NOT MSVC)
+-
+ add_subdirectory(src)

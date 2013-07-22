@@ -1,14 +1,13 @@
 Summary:	Musepack encoder
 Name:		mppenc
 Version:	1.16
-Release:	%mkrel 7
-License:	LGPL
+Release:	8
+License:	LGPLv2.1+
 Group:		Sound
+Url:		http://www.musepack.net/
 Source0:	http://files.musepack.net/source/mppenc-%{version}.tar.bz2
-URL:		http://www.musepack.net/
-BuildRequires:	nasm
+Patch0:		mppenc-1.16-cflags.patch
 BuildRequires:	cmake
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 This program handles encoding of the MPC format, which is an audio
@@ -21,57 +20,17 @@ at an advanced stage in which it contains heavily optimized and
 patentless code.
 
 %prep
-%setup -q %{name}-%{version} 
+%setup -q
+%patch0 -p1
 
 %build
-cmake -DCMAKE_INSTALL_PREFIX:=%{_prefix}
-	    
+%cmake
+%make
+
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
-
-%makeinstall_std
-
-%clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+%makeinstall_std -C build
 
 %files
-%defattr(644,root,root,755)
 %doc Changelog
-%attr(755,root,root) %{_bindir}/*
-
-
-
-
-%changelog
-* Fri Dec 10 2010 Oden Eriksson <oeriksson@mandriva.com> 1.16-7mdv2011.0
-+ Revision: 620406
-- the mass rebuild of 2010.0 packages
-
-* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 1.16-6mdv2010.0
-+ Revision: 430104
-- rebuild
-
-* Tue Jul 29 2008 Thierry Vignaud <tv@mandriva.org> 1.16-5mdv2009.0
-+ Revision: 252992
-- rebuild
-
-* Fri Dec 21 2007 Olivier Blin <oblin@mandriva.com> 1.16-3mdv2008.1
-+ Revision: 136609
-- restore BuildRoot
-
-  + Thierry Vignaud <tv@mandriva.org>
-    - kill re-definition of %%buildroot on Pixel's request
-
-
-* Thu Jan 18 2007 Tomasz Pawel Gajc <tpg@mandriva.org> 1.16-3mdv2007.0
-+ Revision: 110441
-- drop requires
-
-* Thu Jan 18 2007 Tomasz Pawel Gajc <tpg@mandriva.org> 1.16-2mdv2007.1
-+ Revision: 110371
-- fix requires
-
-* Thu Jan 18 2007 Tomasz Pawel Gajc <tpg@mandriva.org> 1.16-1mdv2007.1
-+ Revision: 110086
-- Import mppenc
+%{_bindir}/%{name}
 
