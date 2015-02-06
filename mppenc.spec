@@ -1,7 +1,7 @@
 Summary:	Musepack encoder
 Name:		mppenc
 Version:	1.16
-Release:	8
+Release:	9
 License:	LGPLv2.1+
 Group:		Sound
 Url:		http://www.musepack.net/
