@@ -4,7 +4,7 @@ Version:	1.16
 Release:	9
 License:	LGPLv2.1+
 Group:		Sound
-Url:		http://www.musepack.net/
+Url:		https://www.musepack.net/
 Source0:	http://files.musepack.net/source/mppenc-%{version}.tar.bz2
 Patch0:		mppenc-1.16-cflags.patch
 BuildRequires:	cmake
